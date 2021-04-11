@@ -27,8 +27,8 @@ const Header = () => {
                         <Link className="nav-link" to="followup"> <i className="fa fa-headset"></i> Today Follow Up</Link>
                     </li>
                     <li className="nav-item mr-2">
-                        <Link className="nav-link"> 
-                        Welcome - Siyaram - <i className="fa fa-power-off"></i> Logout </Link>
+                        <Link className="nav-link" onClick={logout}> 
+                        Welcome - {localStorage.getItem("name")} - <i className="fa fa-power-off"></i> Logout </Link>
                     </li>
 
                 </ul>
@@ -38,5 +38,10 @@ const Header = () => {
 
     );
 
+}
+
+const logout = () =>{
+    localStorage.clear();
+    window.location.reload();
 }
 export default Header;

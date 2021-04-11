@@ -3,10 +3,9 @@ import {HashRouter , Route} from 'react-router-dom';
 import Dashboard from './dashboard';
 import Header from './header';
 import Login from './login';
-
-const Newcustomer = () => <h2 className="text-center"> New Customer</h2>
-const Allcustomer = () => <h2 className="text-center"> All Customer</h2>
-const Followup = () => <h2 className="text-center"> Follow Up Customer</h2>
+import Newcustomer from './newcustomer';
+import Allcustomer from './allcustomer';
+import Followup from './followup';
 
 function App() {
   if(localStorage.getItem("userid")==null){

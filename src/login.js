@@ -9,6 +9,33 @@ class Login extends Component{
             message : ''
         }
     }
+
+    ProcessEmail = (obj) =>{
+            this.setState({
+                email:obj.target.value
+            })
+    }
+
+    ProcessPass= (obj) =>{
+        this.setState({
+            pass:obj.target.value
+        })
+    }
+
+    goLogin = () =>{
+        if((this.state.email==="admin@gmail.com") && (this.state.pass==="123")){
+                this.setState({
+                    message:"Success : Please wait redirectiong ...."
+                })
+                localStorage.setItem("name", "Harshad");
+                localStorage.setItem("userid", "7306462898");
+                window.location.reload();
+        }else{
+            this.setState({
+                message:"Fail : Invalid email or Password"
+            })
+        }
+    }
     render(){
         return(
             <div className="container">
@@ -21,15 +48,19 @@ class Login extends Component{
                             <div className="card-body">
                                 <div className="form-group">
                                     <label>E-mail Id</label>
-                                    <input type="text" className="form-control"/>
+                                    <input type="text" 
+                                    className="form-control"
+                                    onChange={this.ProcessEmail}/>
                                 </div>
                                 <div className="form-group">
                                     <label>Password</label>
-                                    <input type="password" className="form-control"/>
+                                    <input type="password"
+                                     className="form-control"
+                                     onChange={this.ProcessPass}/>
                                 </div>
                             </div>
                             <div className="card-footer text-center">
-                                <button className="btn btn-primary">Login</button>
+                                <button className="btn btn-primary"onClick={this.goLogin}>Login</button>
                             </div>
                         </div>
                     </div>
