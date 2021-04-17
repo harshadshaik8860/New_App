@@ -1,6 +1,18 @@
-import React , {useState} from 'react';
+import React , {useEffect, useState} from 'react';
 
 const Allcustomer = () =>{
+
+    const [alluser , updateAllser] = useState([]);
+
+    const getUser =()=>{
+        fetch("http://firstenquiry.com/api/react/customerlist.php")
+        .then(response=>response.json())
+        .then(result=>updateAllser(result))
+    }
+
+    useEffect(()=>{
+        getUser();
+    },[true])
         return(
             <div className="container">
                 <div className="row">
@@ -22,7 +34,25 @@ const Allcustomer = () =>{
                                 </tr>
                             </thead>
                             <tbody>
+                                {
+                                    alluser.map((xuser , index)=>{
+                                        return(
+                                            <tr key={index}>
+                                            
+                                            <td>{xuser.name}</td>
+                                            <td>{xuser.mobile}</td>
+                                            <td>{xuser.email}</td>
+                                            <td>{xuser.city}</td>
+                                            <td>{xuser.address}</td>
+                                            <td>{xuser.service}</td>
+                                            <td>{xuser.feedback}</td>
+                                            <td>{xuser.remarks}</td>
+                                            <td>{xuser.nextcall}</td>
 
+                                            </tr>
+                                        )
+                                    })
+                                }
                             </tbody>
                         </table>
                     </div>
