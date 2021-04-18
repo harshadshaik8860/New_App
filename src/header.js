@@ -24,7 +24,7 @@ const Header = () => {
                         <Link className="nav-link" to="/allcustomer"> <i className="fa fa-table"></i> All Customers</Link>
                     </li>
                     <li className="nav-item mr-2">
-                        <Link className="nav-link" to="followup"> <i className="fa fa-headset"></i> Today Follow Up</Link>
+                        <Link className="nav-link" to="/followup"> <i className="fa fa-headset"></i> Today Follow Up</Link>
                     </li>
                     <li className="nav-item mr-2">
                         <Link className="nav-link" onClick={logout}> 

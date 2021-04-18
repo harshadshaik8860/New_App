@@ -82,7 +82,12 @@ save = () =>{
                             </div>
                             <div className="col-lg-4">
                                 <label>Remarks</label>
-                                <input type="text" className="form-control" name="remarks" onChange={this.processInput}/>
+                                <select type="text" className="form-control" name="remarks" onChange={this.processInput}>
+                                    <option>Interested</option>
+                                    <option>Purchased</option>
+                                    <option>Not-Interested</option>
+                                </select>
+
                             </div>
                             <div className="col-lg-4">
                                 <label>Follow Up Date</label>
