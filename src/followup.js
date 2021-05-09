@@ -26,7 +26,7 @@ const Followup = () => {
     }
 
     const updateInfo = () =>{
-        let allfeedback = oldfeedback + "-----" +feedback;
+        let allfeedback = feedback;
         let input ={"userid":userid, "calldate":nextcall , "remarks":remarks , "feedback":allfeedback};
         input = JSON.stringify(input);
         let url = "http://firstenquiry.com/api/react/updatecall.php";
@@ -34,6 +34,7 @@ const Followup = () => {
           alert("Updated Successfully !");
           getcustomer(); // to reload the list
         })
+          
     }
 
     return (
